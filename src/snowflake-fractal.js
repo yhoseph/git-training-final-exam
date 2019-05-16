@@ -15,7 +15,7 @@ function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
             yi = y0,
             anglei = angle0,
             newLength = length / 3;
-        for(let i=0;i<angles.length;i++) {
+        for(let i = 0; i < angles.length; i++) {
             anglei+=toRadian(angles[i]);
             drawSnowFlakeLine(context, xi, yi, anglei, newLength, deep - 1);
             xi = xi + newLength * Math.cos(anglei);
@@ -33,10 +33,10 @@ function drawSnowFlake(context, width, height, ratius) {
 
     for(var i = 0; i < angles.length; i++) {
         let radAngle = toRadian(angles[i]);
-        let x0 = centerX + ratius * Math.cos(radAngle);
-        let y0 = centerY - ratius * Math.sin(radAngle);
-        let angle0 = radAngle + 5 / 6 * Math.PI;
-        let length = Math.sqrt(3) * ratius;
+            x0 = centerX + ratius * Math.cos(radAngle),
+            y0 = centerY - ratius * Math.sin(radAngle),
+            angle0 = radAngle + 5 / 6 * Math.PI,
+            length = Math.sqrt(3) * ratius;
 
         drawSnowFlakeLine(context, x0, y0, angle0, length, 4);
     }

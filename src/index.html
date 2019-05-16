@@ -1,27 +1,61 @@
 <html>
-    <head>
-        <title>The snowflake fractal.</title>
-        <script src="snowflake-fractal.js"></script>
-    </head>
-    <body>
-        <canvas id="myCanvas" width="500px" height="500px">
+
+<head>
+    <title>The snowflake fractal.</title>
+    <script src="snowflake-fractal.js"></script>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        canvas {
+            -webkit-animation: 10s rotate linear infinite;
+            animation: 10s rotate linear infinite;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+
+        #imgr2 {
+            -webkit-animation-direction: reverse;
+            animation-direction: reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500px" height="500px">
         <script>
             var myCanvas = document.getElementById("myCanvas"),
                 context = myCanvas.getContext("2d"),
                 width = myCanvas.width,
                 height = myCanvas.height,
                 ratius = width / 2 * 0.75;
-                var self = this;
+            var self = this;
 
-                self.deep = 0;
+            self.deep = 0;
 
-                function iterate() {
-                    drawSnowFlake(context, width, height, ratius, self.deep++);
-                    self.deep = (self.deep + 1) % 10;
-                    setTimeout(iterate, 1000);
-                }
+            function iterate() {
+                drawSnowFlake(context, width, height, ratius, self.deep++);
+                self.deep = (self.deep + 1) % 10;
+                setTimeout(iterate, 1000);
+            }
 
-                iterate();
+            iterate();
         </script>
-    </body>
+</body>
+
 </html>

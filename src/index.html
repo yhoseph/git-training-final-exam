@@ -12,7 +12,17 @@
                 height = myCanvas.height,
                 ratius = width / 2 * 0.75;
 
-            drawSnowFlake(context, width, height, ratius);
+                var self = this;
+
+                self.deep = 0;
+
+                function iterate() {
+                    drawSnowFlake(context, width, height, ratius, self.deep++);
+                    self.deep = (self.deep + 1) % 10;
+                    setTimeout(iterate, 1000);
+                }
+
+                iterate();
         </script>
     </body>
 </html>

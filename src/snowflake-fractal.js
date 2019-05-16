@@ -24,7 +24,7 @@ function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
     }
 }
 
-function drawSnowFlake(context, width, height, ratius) {
+function drawSnowFlake(context, width, height, ratius, deep) {
     let angles = Array(90, 210, 330),
         centerX = width / 2,
         centerY = height / 2;
@@ -38,7 +38,7 @@ function drawSnowFlake(context, width, height, ratius) {
             angle0 = radAngle + 5 / 6 * Math.PI,
             length = Math.sqrt(3) * ratius;
 
-        drawSnowFlakeLine(context, x0, y0, angle0, length, 4);
+        drawSnowFlakeLine(context, x0, y0, angle0, length, deep);
     }
 
     context.strokeStyle = "black";

@@ -28,6 +28,7 @@ function drawSnowFlake(context, width, height, ratius, deep) {
     let angles = Array(90, 210, 330),
         centerX = width / 2,
         centerY = height / 2;
+    context.clearRect (0, 0, width, height);
     context.beginPath();
 
     for(var i = 0; i < angles.length; i++) {

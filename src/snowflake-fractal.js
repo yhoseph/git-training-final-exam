@@ -4,7 +4,7 @@ function toRadian(angle) {
 
 function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
     if (deep == 0) {
-        let x1 = x0 + length * Math.cos(angle0),
+        let x1 = x0 + length * Math.sin(angle0),
             y1 = y0 - length * Math.sin(angle0);
 
         context.moveTo(x0, y0);
@@ -18,7 +18,7 @@ function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
         for(let i=0;i<angles.length;i++) {
             anglei+=toRadian(angles[i]);
             drawSnowFlakeLine(context, xi, yi, anglei, newLength, deep - 1);
-            xi = xi + newLength * Math.cos(anglei);
+            xi = xi + newLength * Math.sin(anglei);
             yi = yi - newLength * Math.sin(anglei);
         }
     }

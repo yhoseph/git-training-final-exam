@@ -25,7 +25,7 @@ function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
 }
 
 function drawSnowFlake(context, width, height, ratius, deep) {
-    let angles = Array(70, 220, 350),
+    let angles = Array(90, 210, 330),
         centerX = width / 2,
         centerY = height / 2;
 

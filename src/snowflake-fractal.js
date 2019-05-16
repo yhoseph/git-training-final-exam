@@ -12,7 +12,7 @@ function drawSnowFlakeLine(context, x0, y0, angle0, length, deep) {
         context.lineTo(x1, y1);
         context.stroke();
     } else {
-        let angles = Array(0, -60, 120, -60);
+        let angles = Array(1, 2, 3, 4);
         let xi = x0,
             yi = y0,
             anglei = angle0,

@@ -28,8 +28,6 @@ function drawSnowFlake(context, width, height, ratius, deep) {
     let angles = Array(90, 210, 330),
         centerX = width / 2,
         centerY = height / 2;
-
-    context.clearRect (0, 0, width, height);
     context.beginPath();
 
     for(var i = 0; i < angles.length; i++) {
@@ -41,7 +39,6 @@ function drawSnowFlake(context, width, height, ratius, deep) {
 
         drawSnowFlakeLine(context, x0, y0, angle0, length, deep);
     }
-
-    context.strokeStyle = "black";
+    context.strokeStyle = "#1670ff";
     context.stroke();
 }
